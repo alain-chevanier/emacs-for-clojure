@@ -17,11 +17,12 @@
 (setq-default frame-title-format "%b (%f)")
 
 ;; initial frame height and width
-(add-to-list 'default-frame-alist '(height . 45))
-(add-to-list 'default-frame-alist '(width . 100))
+;; (add-to-list 'default-frame-alist '(height . 45))
+;; (add-to-list 'default-frame-alist '(width . 100))
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; increase font size for better readability
-(set-face-attribute 'default nil :height 140)
+(set-face-attribute 'default nil :height 220)
 
 ;; on a Mac, don't pop up font menu
 (when (string-equal system-type "darwin") 'ok
@@ -48,6 +49,11 @@
 (setup (:package doom-themes)
   (when (not custom-enabled-themes)
     (load-theme 'doom-dracula t)))
+
+;; optional jetbrains IDE like theme
+;; (setup (:package jetbrains-darcula-theme)
+;;   (when (not custom-enabled-themes)
+;;     (load-theme 'jetbrains-darcula t)))
 
 ;; These settings relate to how emacs interacts with your operating system
 (setq ;; makes killing/yanking interact with the clipboard
